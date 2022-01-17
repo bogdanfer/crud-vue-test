@@ -43,9 +43,7 @@
         />
       </v-form>
 
-      <v-divider></v-divider>
-
-      <div v-if="this.errorMessage">
+      <div class="alert-wrapper" v-if="this.errorMessage">
         <v-alert type="error" v-for="error in this.errorMessage" :key="error.id">
           {{ error[0] }}
         </v-alert>
@@ -123,5 +121,8 @@ export default {
 <style>
 .submit-form {
   max-width: 300px;
+}
+.alert-wrapper {
+  margin-top: 20px;
 }
 </style>

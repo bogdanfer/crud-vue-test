@@ -40,6 +40,12 @@
       </v-btn>
     </v-form>
 
+    <div class="alert-wrapper" v-if="this.errorMessage">
+      <v-alert type="error" v-for="error in this.errorMessage" :key="error.id">
+        {{ error[0] }}
+      </v-alert>
+    </div>
+
     <p class="mt-3">{{ message }}</p>
   </div>
 
@@ -57,7 +63,8 @@ export default {
   data() {
     return {
       currentCustomer: null,
-      message: ""
+      message: "",
+      errorMessage: [],
     };
   },
   methods: {
@@ -84,7 +91,7 @@ export default {
           this.message = "The customer was updated successfully!";
         })
         .catch((e) => {
-          console.log(e);
+          this.errorMessage = e.response.data.errors;
         });
     },
 
@@ -109,5 +116,8 @@ export default {
 .edit-form {
   max-width: 300px;
   margin: auto;
+}
+.alert-wrapper {
+  margin-top: 20px;
 }
 </style>
