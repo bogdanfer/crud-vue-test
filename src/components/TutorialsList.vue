@@ -17,7 +17,7 @@
 
     <v-col cols="12" sm="12">
       <v-card class="mx-auto" tile>
-        <v-card-title>Tutorials</v-card-title>
+        <v-card-title>Customers</v-card-title>
 
         <v-data-table
           :headers="headers"
@@ -30,7 +30,7 @@
             <v-icon small class="mr-2" @click="editTutorial(item.id)">
               mdi-pencil
             </v-icon>
-            <v-icon small @click="deleteTutorial(item.id)">
+            <v-icon small @click="deleteCustomer(item.id)">
               mdi-delete
             </v-icon>
           </template>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import TutorialDataService from "../services/TutorialDataService";
+import CustomerDataService from "../services/CustomerDataService";
 export default {
   name: "tutorials-list",
   data() {
@@ -86,7 +86,7 @@ export default {
         this.sort
       );
 
-      TutorialDataService.getAll(params)
+      CustomerDataService.getAll(params)
         .then((response) => {
           console.log(response);
 
@@ -125,8 +125,9 @@ export default {
       this.$router.push({ name: "tutorial-details", params: { id: id } });
     },
 
-    deleteTutorial(id) {
-      TutorialDataService.delete(id)
+    deleteCustomer(id) {
+      console.log(id)
+      CustomerDataService.delete(id)
         .then(() => {
           this.refreshList();
         })

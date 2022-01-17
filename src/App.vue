@@ -2,11 +2,11 @@
   <v-app>
     <v-app-bar app dark>
       <div class="d-flex align-center mr-2">
-        bezKoder
+        Real Time Feedback - Customer List
       </div>
 
       <v-btn to="/tutorials" text>
-        Tutorials
+        Customers
       </v-btn>
 
       <v-btn to="/add" text>
