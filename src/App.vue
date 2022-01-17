@@ -5,7 +5,7 @@
         Real Time Feedback - Customer List
       </div>
 
-      <v-btn to="/tutorials" text>
+      <v-btn to="/" text>
         Customers
       </v-btn>
 

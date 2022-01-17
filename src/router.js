@@ -8,9 +8,9 @@ export default new Router({
   routes: [
     {
       path: "/",
-      alias: "/tutorials",
-      name: "tutorials",
-      component: () => import("./components/TutorialsList")
+      alias: "/c",
+      name: "customers",
+      component: () => import("./components/CustomersList")
     },
     {
       path: "/customer/:id",
@@ -20,7 +20,7 @@ export default new Router({
     {
       path: "/add",
       name: "add",
-      component: () => import("./components/AddTutorial")
+      component: () => import("./components/AddCustomer")
     }
   ]
 });
