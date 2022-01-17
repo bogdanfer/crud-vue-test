@@ -27,7 +27,7 @@
           :hide-default-footer="true"
         >
           <template v-slot:[`item.actions`]="{ item }">
-            <v-icon small class="mr-2" @click="editTutorial(item.id)">
+            <v-icon small class="mr-2" @click="editCustomer(item.id)">
               mdi-pencil
             </v-icon>
             <v-icon small @click="deleteCustomer(item.id)">
@@ -121,12 +121,11 @@ export default {
       this.retrieveCustomers();
     },
 
-    editTutorial(id) {
-      this.$router.push({ name: "tutorial-details", params: { id: id } });
+    editCustomer(id) {
+      this.$router.push({ name: "customer-details", params: { id: id } });
     },
 
     deleteCustomer(id) {
-      console.log(id)
       CustomerDataService.delete(id)
         .then(() => {
           this.refreshList();

@@ -6,7 +6,7 @@ class CustomerDataService {
   }
 
   get(id) {
-    return http.get(`/tutorials/${id}`);
+    return http.get(`/customers/${id}`);
   }
 
   create(data) {
@@ -14,15 +14,11 @@ class CustomerDataService {
   }
 
   update(id, data) {
-    return http.put(`/tutorials/${id}`, data);
+    return http.put(`/customers/${id}`, data);
   }
 
   delete(id) {
     return http.delete(`/customers/${id}`);
-  }
-
-  deleteAll() {
-    return http.delete(`/tutorials`);
   }
 }
 
