@@ -43,7 +43,7 @@
 <script>
 import CustomerDataService from "../services/CustomerDataService";
 export default {
-  name: "tutorials-list",
+  name: "customer-list",
   data() {
     return {
       customers: [],

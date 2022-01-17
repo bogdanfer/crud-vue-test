@@ -49,7 +49,7 @@
         </v-alert>
       </div>
 
-      <v-btn color="primary" class="mt-3" @click="saveTutorial">Submit</v-btn>
+      <v-btn color="primary" class="mt-3" @click="saveCustomer">Submit</v-btn>
     </div>
 
     <div v-else>
@@ -63,7 +63,7 @@
         </v-card-subtitle>
 
         <v-card-actions>
-          <v-btn color="success" @click="newTutorial">Add</v-btn>
+          <v-btn color="success" @click="newCustomer">Add</v-btn>
         </v-card-actions>
       </v-card>
     </div>
@@ -91,7 +91,7 @@ export default {
     };
   },
   methods: {
-    saveTutorial() {
+    saveCustomer() {
       var data = {
         first_name: this.customer.first_name,
         last_name: this.customer.last_name,
