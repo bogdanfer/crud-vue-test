@@ -43,12 +43,10 @@
 <script>
 import CustomerDataService from "../services/CustomerDataService";
 export default {
-  name: "customer-list",
+  name: "customergi-list",
   data() {
     return {
       customers: [],
-      searchTitle: "",
-      sortBy: "",
       sortDesc: false,
       headers: [
         { text: "id", align: "start", sortable: false, value: "id" },
@@ -95,6 +93,8 @@ export default {
           this.totalPages = last_page;
 
           console.log(response.data);
+
+          return true;
         })
         .catch((e) => {
           console.log(e);
@@ -102,12 +102,10 @@ export default {
     },
 
     handleSortChange(items, column, isDesc) {
-      console.log("column: ",column, isDesc[0]);
-      if (column.length > 0) {
+      if (column.length > 0 && this.sort !== (isDesc[0] ? "-" : "") + column[0]) {
         this.page = 1; // always first page
-        this.sort = (isDesc[0] ? "-" : "") + column;
-        console.log(this.sort);
-        // this.retrieveCustomers();
+        this.sort = (isDesc[0] ? "-" : "") + column[0];
+        this.retrieveCustomers();
       }
       return items;
     },
